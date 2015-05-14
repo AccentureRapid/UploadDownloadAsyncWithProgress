@@ -29,6 +29,7 @@ namespace UploadDownloadAsyncWithProgress.Model
         private float progressPercentage;
         private string progressDetails;
         private bool isFileSelected;
+        private bool isUploadStarted;
         private bool isUploaded;
         private bool isUploadingOrDownloading;
         private BitmapImage fileImage;
@@ -96,6 +97,19 @@ namespace UploadDownloadAsyncWithProgress.Model
             {
                 isFileSelected = value;
                 NotifyPropertyChanged("IsFileSelected");
+            }
+        }
+
+        public bool IsUploadStarted
+        {
+            get
+            {
+                return isUploadStarted;
+            }
+            set
+            {
+                isUploadStarted = value;
+                NotifyPropertyChanged("IsUploadStarted");
             }
         }
 

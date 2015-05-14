@@ -14,6 +14,44 @@
             <Setter Property="Margin" Value="0,0,25,0"/>
             <Setter Property="Height" Value="150"/>
         </Style>
+        <Style x:Key="CustomButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="PointerOver">
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <PointerDownThemeAnimation TargetName="Border"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="FocusStates">
+                                    <VisualState x:Name="Focused">
+                                    </VisualState>
+                                    <VisualState x:Name="Unfocused" />
+                                    <VisualState x:Name="PointerFocused" />
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="Border">
+                                <ContentPresenter x:Name="ContentPresenter"
+                                              Content="{TemplateBinding Content}"
+                                              ContentTransitions="{TemplateBinding ContentTransitions}"
+                                              ContentTemplate="{TemplateBinding ContentTemplate}"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
         <converter:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
         <converter:ReverseBooleanToVisibilityConverter x:Key="ReverseBooleanToVisibilityConverter"/>
     </Page.Resources>
@@ -21,7 +59,18 @@
     <Grid Background="#EE9736">
         <Viewbox>
             <Grid Width="1280" Height="800" Background="#EE9736">
-            <ListView Margin="100,75,100,75" Name="FileList" HorizontalContentAlignment="Stretch" Background="White"  SelectionMode="None" d:IsHidden="True">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="10*"/>
+                </Grid.RowDefinitions>
+
+                <Button Grid.Row="1" Name="AddButton" Height="60" Width="60"  HorizontalAlignment="Right" Click="PickAFileButton_Click" Style="{StaticResource CustomButtonStyle}">
+                    <Image Source="Assets/plus.png"/>
+                </Button>
+
+                <ListView Grid.Row="2" Margin="100,0,100,75" Name="FileList" HorizontalContentAlignment="Stretch" Background="White"  SelectionMode="None" d:IsHidden="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
                   
@@ -57,7 +106,7 @@
                             </Button>
                             <Button Name="UploadButton" Visibility="{Binding IsFileSelected,Converter={StaticResource BooleanToVisibilityConverter}}"  BorderBrush="Black" Margin="0,0,10,0" Width="110" Foreground="Black" Content="Upload" Grid.Column="2" Grid.Row="1" Tag="{Binding FileName}" HorizontalAlignment="Right" Click="UploadButton_Click">
                             </Button>
-                            <Button Name="PickUpFile" Visibility="{Binding IsUploaded,Converter={StaticResource ReverseBooleanToVisibilityConverter}}"  BorderBrush="Black" Width="110" Foreground="Black" Content="Browse" Grid.Column="1" Grid.Row="1" Tag="{Binding FileName}" HorizontalAlignment="Right" Click="PickAFileButton_Click">
+                                    <Button Name="PickUpFile" Visibility="{Binding IsUploadStarted,Converter={StaticResource ReverseBooleanToVisibilityConverter}}"  BorderBrush="Black" Width="110" Foreground="Black" Content="Change File" Grid.Column="1" Grid.Row="1" Tag="{Binding FileName}" HorizontalAlignment="Right" Click="PickAFileButton_Click">
                             </Button>
                         </Grid>
                     </Grid>      

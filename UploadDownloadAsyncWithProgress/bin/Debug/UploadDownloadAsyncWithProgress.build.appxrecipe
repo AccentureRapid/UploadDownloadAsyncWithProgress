@@ -116,6 +116,9 @@
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Shared\Blogs\UploadDownloadAsyncWithProgress\UploadDownloadAsyncWithProgress\Assets\Plus.png">
+      <PackagePath>Assets\Plus.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Shared\Blogs\UploadDownloadAsyncWithProgress\UploadDownloadAsyncWithProgress\Assets\SmallLogo.scale-100.png">
       <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>

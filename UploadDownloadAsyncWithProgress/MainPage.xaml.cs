@@ -42,7 +42,7 @@ namespace UploadDownloadAsyncWithProgress
         public MainPage()
         {
             this.InitializeComponent();
-            fileDetailList = new ObservableCollection<FileDetail> { new FileDetail() };
+            fileDetailList = new ObservableCollection<FileDetail> ();
             this.FileList.DataContext = fileDetailList;
             this.FileList.ItemsSource = fileDetailList;
         }
@@ -53,9 +53,7 @@ namespace UploadDownloadAsyncWithProgress
             FileOpenPicker openPicker = new FileOpenPicker();
             openPicker.ViewMode = PickerViewMode.Thumbnail;
             openPicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
-            openPicker.FileTypeFilter.Add(AppConstant.ExtensionJpg);
-            openPicker.FileTypeFilter.Add(AppConstant.ExtensionJpeg);
-            openPicker.FileTypeFilter.Add(AppConstant.ExtensionPng);
+            openPicker.FileTypeFilter.Add("*");
             StorageFile file = await openPicker.PickSingleFileAsync();
             if (file != null)
             {
@@ -64,17 +62,22 @@ namespace UploadDownloadAsyncWithProgress
                 Button pickFileButton = (Button)sender;
                 Grid parent = (Grid)VisualTreeHelper.GetParent(pickFileButton);
                 FileDetail fileDetail = (FileDetail)parent.Tag;
+                if (fileDetail == null)
+                {
+                    fileDetail = new FileDetail();
+                    fileDetail.FileId = fileDetailList.Count;
+                }
+
                 fileDetail.FileImage = image;
                 fileDetail.FileName = file.Name;
                 fileDetail.FileUrl = file.Path;
-                fileDetail.FileId = fileDetailList.Count;
                 var property = await file.GetBasicPropertiesAsync();
                 fileDetail.FileSize = (long)property.Size;
 
                 if (!fileDetail.IsFileSelected)
                 {
                     fileDetail.IsFileSelected = true;
-                    fileDetailList.Add(new FileDetail());
+                    fileDetailList.Add(fileDetail);
                 }
             }
         }
@@ -84,6 +87,7 @@ namespace UploadDownloadAsyncWithProgress
             Button pickFileButton = (Button)sender;
             Grid parent = (Grid)VisualTreeHelper.GetParent(pickFileButton);
             FileDetail fileDetail = (FileDetail)parent.Tag;
+            fileDetail.IsUploadStarted = true;
             fileDetail.IsUploadingOrDownloading = true;
             CloudBlobContainer container = await AzureStorageHelper.GetBlobContainer();
             StorageFile file = await StorageFile.GetFileFromPathAsync(fileDetail.FileUrl);

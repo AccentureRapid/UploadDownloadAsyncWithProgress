@@ -8,7 +8,7 @@
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>55f1474b-101d-4285-8afd-458fa269fc7d</PackageIdentityName>
     <IntermediateOutputPath>D:\Shared\Blogs\UploadDownloadAsyncWithProgress\UploadDownloadAsyncWithProgress\obj\Debug\</IntermediateOutputPath>
-    <RegisteredManifestChecksum>42EC35EB7A298F4118162F78DB290226D14414E16F0CEE2D277E7094D381B7D9</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>B084ABECB4C4A53702558EB9B9B23C5D89FE1D8B0A70D47F613CB7AC791BECC8</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>55f1474b-101d-4285-8afd-458fa269fc7d_1.0.0.0_neutral__12n4jtka0fvtr</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>55f1474b-101d-4285-8afd-458fa269fc7d_12n4jtka0fvtr!App</RegisteredUserModeAppID>
     <RegisteredPackageID>55f1474b-101d-4285-8afd-458fa269fc7d</RegisteredPackageID>
@@ -20,13 +20,13 @@
     <AppXManifest Include="D:\Shared\Blogs\UploadDownloadAsyncWithProgress\UploadDownloadAsyncWithProgress\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-05-02T07:38:38.543</Modified>
+      <Modified>2015-05-14T04:47:22.571</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Shared\Blogs\UploadDownloadAsyncWithProgress\UploadDownloadAsyncWithProgress\bin\Debug\UploadDownloadAsyncWithProgress.exe">
       <PackagePath>UploadDownloadAsyncWithProgress.exe</PackagePath>
-      <Modified>2015-05-02T07:38:36.499</Modified>
+      <Modified>2015-05-14T06:11:59.735</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Shared\Blogs\UploadDownloadAsyncWithProgress\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\Microsoft.Data.Edm.dll">
       <PackagePath>Microsoft.Data.Edm.dll</PackagePath>
@@ -157,6 +157,10 @@
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2013-07-23T00:31:02.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Shared\Blogs\UploadDownloadAsyncWithProgress\UploadDownloadAsyncWithProgress\Assets\Plus.png">
+      <PackagePath>Assets\Plus.png</PackagePath>
+      <Modified>2015-05-14T05:27:40.664</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Shared\Blogs\UploadDownloadAsyncWithProgress\UploadDownloadAsyncWithProgress\Assets\SmallLogo.scale-100.png">
       <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
@@ -178,15 +182,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Shared\Blogs\UploadDownloadAsyncWithProgress\UploadDownloadAsyncWithProgress\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2015-05-02T07:38:36.320</Modified>
+      <Modified>2015-05-14T06:11:20.337</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Shared\Blogs\UploadDownloadAsyncWithProgress\UploadDownloadAsyncWithProgress\bin\Debug\UploadDownloadAsyncWithProgress.xr.xml">
       <PackagePath>UploadDownloadAsyncWithProgress.xr.xml</PackagePath>
-      <Modified>2015-05-02T07:38:36.281</Modified>
+      <Modified>2015-05-14T06:11:20.279</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Shared\Blogs\UploadDownloadAsyncWithProgress\UploadDownloadAsyncWithProgress\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-05-02T07:38:38.254</Modified>
+      <Modified>2015-05-14T06:11:22.698</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
